@@ -37,3 +37,7 @@ To incorporate further `messages*.html` archive exports, regenerate the `data/mo
 ## Credits
 
 A standalone Bollywood catalogue with an original interface inspired by popular movie-discovery experiences.
+
+## Direct video-quality links
+
+Movie details now display the **original 480p, 720p, 1080p** (where available) and other resolution-specific URLs directly from the corresponding exported message. Clicking a quality button opens that exact external link, not an intermediate archive page. Entries without quality-labeled links show a clear fallback. These third-party links are not tested for validity or rights.

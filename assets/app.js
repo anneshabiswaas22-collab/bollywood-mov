@@ -144,6 +144,29 @@
     const saved=state.favorites.has(m.i);
     $("modalFavorite").textContent=saved?"♥ Remove from My List":"♡ Add to My List";
   }
+  function renderQualityLinks(movie){
+    const holder=$("modalQualityLinks");holder.replaceChildren();
+    const entries=Object.entries(movie.l||{}).filter(([quality,href])=>
+      /^\d{3,4}p$/.test(quality)&&typeof href==="string"&&/^https?:\/\/[a-z0-9.-]+(?:\/|$)/i.test(href)
+    ).sort((a,b)=>parseInt(a[0],10)-parseInt(b[0],10));
+    $("modalNoLinks").hidden=entries.length>0;
+    for(const [quality,href] of entries){
+      const anchor=document.createElement("a");
+      anchor.className="quality-link";
+      anchor.href=href;
+      anchor.target="_blank";
+      anchor.rel="noopener noreferrer nofollow";
+      anchor.setAttribute("aria-label","Open "+quality+" link for "+movie.t+" on external website");
+      const top=document.createElement("span");top.className="quality-top";
+      const label=document.createElement("strong");label.textContent=quality;
+      const arrow=document.createElement("span");arrow.textContent="↗";arrow.setAttribute("aria-hidden","true");
+      top.append(label,arrow);
+      const domain=document.createElement("small");domain.className="quality-domain";
+      domain.textContent=href.match(/^https?:\/\/([^/?#]+)/i)?.[1]||"External site";
+      anchor.append(top,domain);
+      holder.appendChild(anchor);
+    }
+  }
   function openDetails(id){
     const m=state.byId.get(id);if(!m)return;
     state.active=m;previousFocus=document.activeElement;
@@ -158,6 +181,7 @@
     (m.g.length?m.g:["Indian cinema"]).forEach(s=>{const el=document.createElement("span");el.textContent=s;$("modalTags").appendChild(el);});
     $("modalSummary").textContent="An archived "+m.k.toLowerCase()+" entry from "+m.y+". "+(m.g.length?"Genres: "+m.g.join(", ")+". ":"")+"Explore other titles in this collection or open the original archive post for more information.";
     $("modalSource").href=m.s;
+    renderQualityLinks(m);
     updateModalFavorite(m);
     $("detailsBackdrop").hidden=false;
     document.body.classList.add("modal-open");

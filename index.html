@@ -135,7 +135,14 @@
     <section class="movie-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="modal-close" id="modalClose" aria-label="Close movie details">×</button>
       <div class="modal-image-wrap"><img id="modalPoster" src="" alt=""><div class="modal-image-overlay"></div><span class="modal-image-label">BOLLYVAULT ORIGINAL ARCHIVE</span></div>
-      <div class="modal-content"><span class="section-overline">NOW DISCOVERING</span><h2 id="modalTitle">Movie title</h2><div class="modal-meta" id="modalMeta"></div><div class="modal-tags" id="modalTags"></div><p class="modal-summary" id="modalSummary">Discover this title from the collection.</p><div class="modal-actions"><button class="button button-primary" id="modalFavorite">♡ Add to My List</button><a class="button button-secondary" id="modalSource" href="#" target="_blank" rel="noopener noreferrer">View archive entry ↗</a></div><p class="modal-smallprint">The archive entry contains the original exported post. This website is a catalogue, not a video streaming service.</p></div>
+      <div class="modal-content"><span class="section-overline">NOW DISCOVERING</span><h2 id="modalTitle">Movie title</h2><div class="modal-meta" id="modalMeta"></div><div class="modal-tags" id="modalTags"></div><p class="modal-summary" id="modalSummary">Discover this title from the collection.</p><div class="modal-downloads" id="modalDownloads">
+        <div class="modal-downloads-heading"><span>AVAILABLE VIDEO LINKS</span><span class="modal-external">Opens on external site ↗</span></div>
+        <div class="quality-links" id="modalQualityLinks" aria-label="Available video quality links"></div>
+        <p class="modal-no-links" id="modalNoLinks" hidden>No resolution-specific links were found in this entry. Check the original archive post for details.</p>
+      </div>
+      <div class="modal-actions"><button class="button button-secondary" id="modalFavorite">♡ Add to My List</button></div>
+      <a class="archive-reference" id="modalSource" href="#" target="_blank" rel="noopener noreferrer">Original archive post ↗</a>
+      <p class="modal-smallprint">The links above are copied from the archived post and open third-party websites directly. Availability and rights are not verified. BollyVault does not host or stream video.</p></div>
     </section>
   </div>
   <div class="toast" id="toast" aria-live="polite" role="status"></div>
