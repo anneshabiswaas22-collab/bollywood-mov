@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090d">
+  <meta name="description" content="Explore a visual archive of Bollywood cinema. Discover thousands of titles by genre, year, and collection.">
+  <title>BollyVault — Discover Bollywood Cinema</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <div class="ambient-glow" aria-hidden="true"></div>
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#home" aria-label="BollyVault home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m9 5 17 11L9 27V5Z" fill="currentColor"/><path d="M6 5v22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
+      <span class="brand-word">BOLLY<span>VAULT</span><small>CINEMA COLLECTION</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#discover" class="nav-link">Discover</a>
+      <a href="#genres" class="nav-link">Genres</a>
+      <a href="#library" class="nav-link">All titles</a>
+    </nav>
+    <div class="header-actions">
+      <label class="search-field" for="searchInput">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="Search movies, genres..." aria-label="Search movies and genres">
+        <span class="key-hint" aria-hidden="true">/</span>
+      </label>
+      <button class="header-watchlist icon-button" id="watchlistToggle" aria-label="Show my list" aria-pressed="false" title="My List">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.8 8.2c0 5-8.8 10.7-8.8 10.7S3.2 13.2 3.2 8.2a4.6 4.6 0 0 1 8.8-1.7 4.6 4.6 0 0 1 8.8 1.7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <span class="watch-count" id="watchCount" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero-shell container" aria-labelledby="heroTitle">
+      <div class="hero-haze" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <div class="hero-eyebrow"><span class="live-dot"></span> YOUR FRONT ROW TO INDIAN CINEMA</div>
+        <div class="hero-overline" id="heroOverline">HANDPICKED FROM THE ARCHIVE</div>
+        <h1 class="hero-title" id="heroTitle">Every story.<br><em>One universe.</em></h1>
+        <p class="hero-description" id="heroDescription">From iconic romances to edge-of-your-seat thrillers. Explore thousands of films, beautifully collected in one place.</p>
+        <div class="hero-meta" id="heroMeta"><span>Bollywood</span><i></i><span>Discover something great</span></div>
+        <div class="hero-actions">
+          <button class="button button-primary" id="heroExplore">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>
+            Explore collection
+          </button>
+          <button class="button button-secondary" id="heroDetails">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 11v5m0-8v.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            More info
+          </button>
+        </div>
+        <div class="hero-counter"><div class="avatar-bubbles" aria-hidden="true"><span>✦</span><span>★</span><span>◆</span></div><div><strong id="heroCount">3,600+</strong><small>STORIES WAITING TO BE DISCOVERED</small></div></div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-ring hero-ring-one"></div><div class="hero-ring hero-ring-two"></div>
+        <div class="side-poster side-poster-left"><img id="heroSideLeft" alt=""></div>
+        <div class="side-poster side-poster-right"><img id="heroSideRight" alt=""></div>
+        <div class="main-poster">
+          <div class="poster-shine"></div>
+          <img id="heroPoster" alt="">
+          <div class="main-poster-caption"><span class="poster-tag">FEATURED FILM</span><strong id="heroPosterTitle">Bollywood cinema</strong><small>THE BOLLYVAULT SELECTION</small></div>
+        </div>
+        <div class="hero-orbit hero-orbit-top">✦</div><div class="hero-orbit hero-orbit-bottom">✳</div>
+      </div>
+      <div class="hero-bottom-line"><span>SCROLL TO EXPLORE</span><span class="scroll-symbol">↓</span><span>01 — THE COLLECTION</span></div>
+    </section>
+
+    <section class="intro-strip container" aria-label="Collection statistics">
+      <div class="intro-item"><span class="intro-icon">◈</span><div><strong id="statTitles">3,603</strong><small>ARCHIVED ENTRIES</small></div></div>
+      <div class="intro-divider"></div>
+      <div class="intro-item"><span class="intro-icon">✳</span><div><strong id="statUnique">2,400+</strong><small>UNIQUE FILMS & SERIES</small></div></div>
+      <div class="intro-divider"></div>
+      <div class="intro-item"><span class="intro-icon">◉</span><div><strong id="statGenres">20+</strong><small>WAYS TO EXPLORE</small></div></div>
+      <div class="intro-divider"></div>
+      <div class="intro-item"><span class="intro-icon">↗</span><div><strong>4</strong><small>ARCHIVE CHAPTERS</small></div></div>
+    </section>
+
+    <section class="discover-section container" id="discover" aria-labelledby="discoverTitle">
+      <div class="section-lead"><div><span class="section-overline">THE SPOTLIGHT</span><h2 id="discoverTitle">Explore the <span>extraordinary.</span></h2><p>Find your next favorite film in the collection.</p></div><button class="link-button" id="surpriseBtn">Surprise me <span aria-hidden="true">↗</span></button></div>
+      <div class="spotlight-feature" id="spotlightFeature">
+        <div class="spotlight-icon">✦</div><div class="spotlight-text"><span>STAFF PICK</span><strong>Rediscover the magic of movies.</strong><p>The greatest stories deserve a beautiful home.</p></div><span class="spotlight-arrow">↗</span>
+      </div>
+
+      <div class="genre-heading" id="genres"><div><span class="section-overline">PICK YOUR MOOD</span><h3>Browse by genre</h3></div><span class="micro-label" id="genreCount">Discover every mood</span></div>
+      <div class="genre-chips" id="genreChips" aria-label="Filter movies by genre"><button type="button" class="genre-chip selected" data-genre="All">All genres</button></div>
+
+      <section class="rail-section" id="recentSection" aria-labelledby="recentTitle">
+        <div class="rail-heading"><div><span class="rail-kicker"><span class="small-red-dot"></span> FRESH FROM THE ARCHIVE</span><h3 id="recentTitle">Recently added</h3></div><div class="rail-controls"><button class="rail-arrow" data-rail="recentRail" data-dir="-1" aria-label="Scroll recently added left">←</button><button class="rail-arrow" data-rail="recentRail" data-dir="1" aria-label="Scroll recently added right">→</button></div></div>
+        <div class="movie-rail" id="recentRail" aria-live="polite"><div class="loading-text">Preparing your collection…</div></div>
+      </section>
+
+      <section class="rail-section" id="actionSection" aria-labelledby="actionTitle">
+        <div class="rail-heading"><div><span class="rail-kicker">ADRENALINE & ADVENTURE</span><h3 id="actionTitle">Action-packed favorites</h3></div><div class="rail-controls"><button class="rail-arrow" data-rail="actionRail" data-dir="-1" aria-label="Scroll action titles left">←</button><button class="rail-arrow" data-rail="actionRail" data-dir="1" aria-label="Scroll action titles right">→</button></div></div>
+        <div class="movie-rail" id="actionRail"></div>
+      </section>
+
+      <section class="rail-section" id="romanceSection" aria-labelledby="romanceTitle">
+        <div class="rail-heading"><div><span class="rail-kicker">LOVE, LAUGHTER & ALL THE FEELS</span><h3 id="romanceTitle">Stories of the heart</h3></div><div class="rail-controls"><button class="rail-arrow" data-rail="romanceRail" data-dir="-1" aria-label="Scroll romance titles left">←</button><button class="rail-arrow" data-rail="romanceRail" data-dir="1" aria-label="Scroll romance titles right">→</button></div></div>
+        <div class="movie-rail" id="romanceRail"></div>
+      </section>
+    </section>
+
+    <section class="library-section container" id="library" aria-labelledby="libraryTitle">
+      <div class="library-top"><div><span class="section-overline">THE FULL EXPERIENCE</span><h2 id="libraryTitle">The entire <span>collection.</span></h2><p>Browse every title, filter the archive, and save what catches your eye.</p></div><div class="library-deco" aria-hidden="true">✳</div></div>
+      <div class="filter-toolbar">
+        <div class="result-summary"><strong id="resultCount">—</strong><span id="resultLabel">titles in the collection</span></div>
+        <div class="filters">
+          <label for="typeSelect">Type <select id="typeSelect"><option value="All">All titles</option><option value="Movie">Movies</option><option value="Series">Series</option></select></label>
+          <label for="sortSelect">Sort by <select id="sortSelect"><option value="recent">Recently archived</option><option value="year">Release year: newest</option><option value="oldest">Release year: oldest</option><option value="az">Title: A–Z</option></select></label>
+          <button class="reset-button" id="resetFilters" title="Reset search and filters">Reset filters ↺</button>
+        </div>
+      </div>
+      <div class="active-filters" id="activeFilters" hidden></div>
+      <div class="movie-grid" id="movieGrid"><div class="grid-loading">Loading movie posters and information…</div></div>
+      <div class="empty-state" id="emptyState" hidden><div class="empty-orb">◇</div><h3>No titles found</h3><p>Try a different title or genre. There are thousands more stories to explore.</p><button class="button button-secondary" id="emptyReset">Clear filters</button></div>
+      <div class="load-more-wrap"><button class="button button-outline" id="loadMore" hidden>Show more titles <span>↓</span></button><span class="page-status" id="pageStatus"></span></div>
+    </section>
+    <section class="end-banner container"><div class="end-banner-icon">✦</div><div><span class="section-overline">FOREVER A MOVIE NIGHT</span><h2>One more story? <em>Always.</em></h2><p>A cinematic home for a growing archive of Bollywood favorites.</p></div><button class="button button-primary" id="backToTop">Back to the spotlight ↑</button></section>
+  </main>
+
+  <footer class="footer container"><a href="#home" class="footer-brand">BOLLY<span>VAULT</span></a><p>An independent, Netflix-inspired visual catalogue of movie information and posters from this repository. No films are streamed or hosted by this interface.</p><div><span>MADE FOR THE LOVE OF CINEMA</span><a href="https://github.com/anneshabiswaas22-collab/bollywood-mov" target="_blank" rel="noopener noreferrer">View source ↗</a></div></footer>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation"><a href="#home"><span>⌂</span>Home</a><a href="#discover"><span>✦</span>Discover</a><a href="#library"><span>▦</span>Movies</a><button id="mobileList"><span>♡</span>My List</button></nav>
+
+  <div class="modal-backdrop" id="detailsBackdrop" hidden>
+    <section class="movie-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close movie details">×</button>
+      <div class="modal-image-wrap"><img id="modalPoster" src="" alt=""><div class="modal-image-overlay"></div><span class="modal-image-label">BOLLYVAULT ORIGINAL ARCHIVE</span></div>
+      <div class="modal-content"><span class="section-overline">NOW DISCOVERING</span><h2 id="modalTitle">Movie title</h2><div class="modal-meta" id="modalMeta"></div><div class="modal-tags" id="modalTags"></div><p class="modal-summary" id="modalSummary">Discover this title from the collection.</p><div class="modal-actions"><button class="button button-primary" id="modalFavorite">♡ Add to My List</button><a class="button button-secondary" id="modalSource" href="#" target="_blank" rel="noopener noreferrer">View archive entry ↗</a></div><p class="modal-smallprint">The archive entry contains the original exported post. This website is a catalogue, not a video streaming service.</p></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" aria-live="polite" role="status"></div>
+</body>
+</html>
